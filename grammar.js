@@ -406,8 +406,9 @@ module.exports = grammar({
     )),
 
     function_definition: $ => seq(
-      optional('async'),
-      'def',
+      optional(choice('async', 'owned', 'borrowed', 'inout')),
+      // 'def',
+      choice('def', 'fn'),
       field('name', $.identifier),
       field('type_parameters', optional($.type_parameter)),
       field('parameters', $.parameters),
@@ -468,7 +469,8 @@ module.exports = grammar({
     )),
 
     class_definition: $ => seq(
-      'class',
+      choice('class', 'struct'),
+      // 'class',
       field('name', $.identifier),
       field('type_parameters', optional($.type_parameter)),
       field('superclasses', optional($.argument_list)),
@@ -840,6 +842,7 @@ module.exports = grammar({
     ),
 
     assignment: $ => seq(
+      optional(choice('var', 'let', 'alias')),
       field('left', $._left_hand_side),
       choice(
         seq('=', field('right', $._right_hand_side)),
@@ -849,6 +852,7 @@ module.exports = grammar({
     ),
 
     augmented_assignment: $ => seq(
+      optional(choice('var', 'let', 'alias')),
       field('left', $._left_hand_side),
       field('operator', choice(
         '+=', '-=', '*=', '/=', '@=', '//=', '%=', '**=',
