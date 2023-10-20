@@ -1,8 +1,8 @@
-# tree-sitter-python
+# tree-sitter-mojo
 
-[![build](https://github.com/tree-sitter/tree-sitter-python/actions/workflows/ci.yml/badge.svg)](https://github.com/tree-sitter/tree-sitter-python/actions/workflows/ci.yml)
+[![build](https://github.com/realprogrammersusevim/tree-sitter-mojo/actions/workflows/ci.yml/badge.svg)](https://github.com/realprogrammersusevim/tree-sitter-mojo/actions/workflows/ci.yml)
 
-Python grammar for [tree-sitter][].
+Mojo grammar for [tree-sitter][].
 
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter
 

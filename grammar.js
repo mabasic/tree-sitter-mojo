@@ -1,9 +1,8 @@
 /**
- * @file Python grammar for tree-sitter
+ * @file Mojo grammar for tree-sitter
  * @author Max Brunsfeld <maxbrunsfeld@gmail.com>
  * @license MIT
- * @see {@link https://docs.python.org/2/reference/grammar.html|Python 2 grammar}
- * @see {@link https://docs.python.org/3/reference/grammar.html|Python 3 grammar}
+ * @see {@link https://docs.modular.com/mojo/programming-manual.html|Mojo Manual}
  */
 
 /* eslint-disable arrow-parens */
@@ -39,7 +38,7 @@ const PREC = {
 const SEMICOLON = ';';
 
 module.exports = grammar({
-  name: 'python',
+  name: 'mojo',
 
   extras: $ => [
     $.comment,
